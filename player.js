@@ -81,6 +81,11 @@ function playM3u8(url){
   document.title = url
 }
 
+video.addEventListener('ended', () => {
+  video.currentTime = 0;
+  video.play();
+});
+
 chrome.storage.local.get({
   hlsjs: currentVersion,
   debug: false,
